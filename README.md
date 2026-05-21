@@ -57,8 +57,8 @@ Developed by **metin.py**.
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/metin-py/cyber-aegis.git
-cd cyber-aegis/firmware
+git clone https://github.com/metinpy/Cyber-Aegis.git
+cd Cyber-Aegis
 ```
 
 ### 3. Configure Your Credentials
