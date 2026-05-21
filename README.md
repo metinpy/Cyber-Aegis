@@ -61,7 +61,27 @@ git clone https://github.com/metinpy/Cyber-Aegis.git
 cd Cyber-Aegis
 ```
 
-### 3. Configure Your Credentials
+### 3. Install the WordPress Plugin
+
+The `plugin/cyber-aegis-bridge.php` file is the WordPress side of the project. It captures security events and exposes the REST API that the device communicates with.
+
+**Step-by-step:**
+
+1. Go to your **WordPress Admin Panel → Plugins → Add New → Upload Plugin**.
+2. Click **"Choose File"** and select `plugin/cyber-aegis-bridge.php` from this repository.
+3. Click **"Install Now"** then **"Activate Plugin"**.
+
+> Alternatively, you can upload the file manually via FTP/cPanel to your `/wp-content/plugins/cyber-aegis/` directory, then activate it from the Plugins page.
+
+**Configure the Device Key:**
+
+4. In the WordPress admin sidebar, click **Cyber-Aegis**.
+5. In the **"SECURE_LINK"** section, enter a secret key of your choice (e.g. `mySecretKey123`) and click **Save**.
+6. Copy this same key — you will need it in the next step.
+
+---
+
+### 4. Configure Your Credentials
 
 Open `src/main.cpp` and fill in your details:
 ```cpp
@@ -71,10 +91,10 @@ const char* WIFI_PASS = "YOUR_WIFI_PASSWORD";
 
 // WordPress API
 const char* WP_BASE_URL = "https://your-wordpress-site.com"; // No trailing slash
-const char* DEVICE_KEY  = "YOUR_DEVICE_KEY"; // Must match the key in WP Admin > Cyber-Aegis
+const char* DEVICE_KEY  = "YOUR_DEVICE_KEY"; // Must match the key you set in WP Admin > Cyber-Aegis
 ```
 
-> **DEVICE_KEY** is a secret token you define in your WordPress admin panel under the Cyber-Aegis plugin settings. It authenticates hardware commands.
+> **DEVICE_KEY** must be exactly the same string you saved in the WordPress plugin settings. It authenticates all hardware commands sent to your site.
 
 ### 4. Flash to Device
 - Connect your ESP32-S3 via USB.
