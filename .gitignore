@@ -1,0 +1,19 @@
+# PlatformIO build artifacts
+.pio/
+
+# VS Code C/C++ IntelliSense cache
+.vscode/.browse.c_cpp.db*
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/ipch
+
+# Clangd compile commands (auto-generated, can be huge)
+compile_commands.json
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Secrets / local config (never commit these)
+secrets.h
+config_local.h
